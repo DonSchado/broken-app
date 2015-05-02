@@ -1,0 +1,18 @@
+<h2>All the people:</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= image_tag user.avatar, width: 50, height: 50 %> &nbsp;
+              <strong><%= link_to user.name, user %></strong>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

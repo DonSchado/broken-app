@@ -1,0 +1,10 @@
+<%= simple_form_for :session, url: :session, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+  <%= field_set_tag 'Login' do %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.button :submit, 'Login', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
+<br>
+<p>Or <%= link_to 'Sign up', new_user_path %> if you want to create a new account.</p>

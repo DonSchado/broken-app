@@ -1,0 +1,17 @@
+<li class="media" rel="<%= post.user.name.parameterize %>-post">
+  <%= image_tag(post.user.picture, width: 40, height: 40, class: 'pull-left thumbnail') %>
+  <div class="media-body well">
+    <h5 class="media-heading">
+      <%= link_to post.user.name, post.user %>
+      <small><%= l post.created_at, :format => :short %></small>
+
+      <% if post.user = current_user %>
+        <small class='pull-right'>
+          <%= link_to 'Edit', edit_posts_path(post), class: 'btn btn-default btn-xs' %>
+          <%= link_to 'Delete', post_path(post), method: :delete, class: 'btn btn-default btn-xs' %>
+        </small>
+      <% end %>
+    </h5>
+    <p><%= post.content %></p>
+  </div>
+</li>

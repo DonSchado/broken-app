@@ -1,0 +1,44 @@
+<%= simple_form_for(@user, html: { class: 'form-horizontal', role: 'form' } ) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <% @user.errors.full_messages.each do |msg| %>
+        <div class='alert alert-danger'><%= msg %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    <span class="help-block">How should other people identify you?</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+    <span class="help-block">You will need this to log in!</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.text_field :avatar %>
+    <span class="help-block">http://www.somewhereontheinternet.com/my-avatar.png</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+    <span class="help-block">Choose a save password with at least 6 characters!</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+    <span class="help-block">What was it again?</span>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= f.submit 'New Account', class: 'btn btn-primary' %>
+  </div>
+<% end %>
